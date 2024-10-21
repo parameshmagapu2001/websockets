@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <title>Chat app</title>
+  </head>
+  <body style="font-family: 'Open Sans', sans-serif; display: grid; place-items: center; background-color: #f7d5d5; margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;">
+    <h1 class="title" style="margin: 20px 0;">Chat</h1>
+    <div class="main" style="border: 8px solid #f7cece; border-radius: 24px; overflow: hidden;">
+      <div class="name" style="display: flex; font-size: 32px; font-weight: 700; padding: 8px 16px; color: #684545; background-color: #ebebeb;">
+        <span style="color: #bbb;"><i class="far fa-user"></i></span>
+        <input
+          type="text"
+          id="name-input"
+          class="name-input"
+          value="persons"
+          maxlength="20"
+          style="font-size: 24px; font-weight: 700; color: #7e7e7e; flex-grow: 1; border: none; margin: 0px 12px; outline: none; background-color: #ebebeb;"
+        />
+      </div>
+ 
+      <ul class="message-container" id="message-container" style="display: flex; flex-direction: column; background-color: #f6f6f6; width: 400px; height: 600px; overflow-y: scroll; overflow-x: hidden;">
+      </ul>
+
+      <form class="message-form" id="message-form" style="display: flex; justify-content: space-between; width: 400px;">
+        <input
+          type="text"
+          name="message"
+          id="message-input"
+          class="message-input"
+          placeholder="Type your message"
+          style="flex-grow: 1; height: 48px; font-size: 16px; border: none; outline: none; padding: 0 12px; background-color: #fff;"
+        />
+        <div class="v-divider" style="height: 48px; width: 2px; background-color: #f6f6f6;"></div>
+        <button type="submit" class="send-button" style="height: 48px; font-size: 16px; border: none; padding: 0px 20px; outline: none; background-color: #fff; cursor: pointer;">
+          send <span><i class="fas fa-paper-plane"></i></span>
+        </button>
+      </form>
+    </div>
+    <h3 class="clients-total" id="client-total" style="margin: 20px 0; color: #7e7e7e;">Total clients: </h3>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"
+      integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
